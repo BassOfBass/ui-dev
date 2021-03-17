@@ -1,0 +1,22 @@
+for house of houses
+  article.house-entry(id= house.id)
+    header.house-entry__header
+      figure.house-entry__presentation 
+        -
+          const color = getRandomColor();
+          const typeDesc = 
+            house.type !== "IndependentLiving" 
+              ? "Restaurant & Support available" 
+              : "Independent Living";
+        img.house-entry__image(
+          src=`https://via.placeholder.com/300x150/${color}/FFFFFF?text=${house.title}`, 
+          alt=""
+        )
+        figcaption.house-entry__type(
+          class= house.type !== "IndependentLiving" ? "house-entry__type--independent" : "house-entry__type--support"
+        ) #{typeDesc}
+      h2.house-entry__title 
+        a.house-entry__link(href= `/details/${house.id}`) #{house.title}
+      address.house-entry__address #{house.address}
+    section.house-entry__info New Properties for Sale from #[span.house-entry__price £#{house.price.toLocaleString()}]
+    footer.house-entry__footer Shared Ownership Available

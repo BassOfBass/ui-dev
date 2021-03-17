@@ -1,3 +1,8 @@
+mixin shevron()
+  <svg width="7" height="17" viewBox="0 0 7 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1 1L5.043 8.41667L1 15.8333" stroke="#363636" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+
 doctype html
 html(lang="en")
   head
@@ -6,7 +11,23 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title UI Dev
   body 
-    header
-      h1 Our Latest Developments
     main
-    footer
+      h1.real-estate__heading Our Latest Developments
+      section.real-estate
+        form.filter-form
+          label.filter-form__label(for="real-filter") Filter:
+          input#real-filter.filter-form__input(
+            type="text", 
+            name="name",
+            minlength="3",
+            autocomplete="off"
+          )
+          //- TODO: fix button text 
+          //- button.filter-form__submit(type="submit") Submit
+
+        div.real-estate__houses
+
+        div.real-estate__more
+          button.real-estate__more-button(type="button") See more #{">>"}
+
+      

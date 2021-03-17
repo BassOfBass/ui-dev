@@ -32,7 +32,15 @@ const config = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env']
+          presets: ['@babel/preset-env'],
+          plugins: [
+            [
+              "@babel/plugin-transform-runtime",
+              {
+                "regenerator": true
+              }
+            ]
+          ]
         }
       },
       {
